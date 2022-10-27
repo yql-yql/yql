@@ -1,0 +1,1 @@
+<view class="profile" style="{{'margin-top:'+(topValue+25+'px')+';'}}"><image src="{{myInfo.src}}" class="_img"></image><view class="content"><view class="title">{{myInfo.name}}</view><view class="detail"><text>{{myInfo.follow+"关注"}}</text><text>{{myInfo.fans+"粉丝"}}</text><text>{{"Lv."+myInfo.level}}</text></view></view></view>

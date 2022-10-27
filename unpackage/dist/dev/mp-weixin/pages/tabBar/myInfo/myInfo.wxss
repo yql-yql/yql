@@ -1,0 +1,10 @@
+.myInfo.data-v-596ec897 {
+  background-color: #f8f8f8;
+  width: 90%;
+  margin: 0 auto;
+}
+.footer-music.data-v-596ec897 {
+  bottom: 100rpx;
+  margin-left: -38rpx;
+}
+

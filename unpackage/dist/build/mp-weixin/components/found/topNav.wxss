@@ -1,0 +1,1 @@
+.top-nav{position:-webkit-sticky;position:sticky;top:0rpx;height:110rpx;display:flex;align-items:center;justify-content:space-around;z-index:100;background-color:#e9cac6}.searchBox{width:70%;text-align:center}

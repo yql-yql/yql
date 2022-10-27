@@ -1,0 +1,1 @@
+<view class="top-title" style="{{'top:'+(topValue+'px')+';'}}"><uni-icons vue-id="78b72d1d-1" type="back" size="30" color="#fff" data-event-opts="{{[['^click',[['goBack']]]]}}" bind:click="__e" bind:__l="__l"></uni-icons><text style="color:#fff;font-size:38rpx;font-weight:700;">歌单</text></view>

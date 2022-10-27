@@ -1,0 +1,1 @@
+.icon-list{width:100%;height:350rpx;border:1px solid #e8e8e8;background-color:#fff;border-radius:20rpx;box-shadow:0 0 4px 5px rgba(0,0,0,.04);margin-top:20rpx;display:flex;flex-flow:wrap;align-items:center}.icon-list .icon-item{display:flex;width:25%;height:110rpx;flex-direction:column;align-items:center;justify-content:space-between;color:#737373}

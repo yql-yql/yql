@@ -1,0 +1,10 @@
+{
+  "navigationBarTitleText": "我的",
+  "usingComponents": {
+    "footer-music": "/components/itemMusic/footerMusic",
+    "top-nav": "/components/myInfo/topNav",
+    "profile": "/components/myInfo/profile",
+    "icon-list": "/components/myInfo/iconList",
+    "my-music-list": "/components/myInfo/myMusicList"
+  }
+}

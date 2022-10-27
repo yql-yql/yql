@@ -1,0 +1,10 @@
+.itemMusicList{padding:40rpx 30rpx}.isFooterMusic{padding-bottom:100rpx}.musicList-top,
+.top-left,
+.top-right{display:flex;align-items:center;justify-content:space-between}.musicList-top .top-left,
+.top-left .top-left,
+.top-right .top-left{width:200rpx}.musicList-top .top-right,
+.top-left .top-right,
+.top-right .top-right{width:120rpx}.musiclist-content{padding:20rpx 0}.musiclist-content .musicItem,
+.musiclist-content .itemLeft,
+.musiclist-content .itemRight{display:flex;align-items:center;justify-content:space-between}.musiclist-content .title,
+.musiclist-content .singer-album{display:-webkit-box;overflow:hidden;text-overflow:ellipsis;word-wrap:break-word;white-space:normal!important;-webkit-line-clamp:1;-webkit-box-orient:vertical}.musiclist-content .musicItem{height:100rpx}.musiclist-content .itemLeft{width:520rpx}

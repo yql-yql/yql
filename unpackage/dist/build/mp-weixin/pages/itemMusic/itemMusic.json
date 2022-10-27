@@ -1,0 +1,10 @@
+{
+  "navigationBarTitleText": "",
+  "enablePullDownRefresh": false,
+  "usingComponents": {
+    "item-music-top": "/components/itemMusic/itemMusicTop",
+    "item-music-list": "/components/itemMusic/itemMusicList",
+    "footer-music": "/components/itemMusic/footerMusic",
+    "item-music-nav": "/components/itemMusic/itemMusicNav"
+  }
+}

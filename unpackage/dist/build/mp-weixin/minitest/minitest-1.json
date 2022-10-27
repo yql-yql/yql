@@ -1,0 +1,43 @@
+{
+  "meta": {
+    "caseId": "650ba9dd-e068-4101-98d0-ac20f801df28",
+    "caseName": "minitest-1",
+    "remarks": "",
+    "version": "0.0.1",
+    "startTime": 1666794903802,
+    "endTime": 0,
+    "appid": "wxb1b9eb0017a8ced3"
+  },
+  "env": {
+    "wxapplibVersion": "2.27.0",
+    "openid": "o6zAJs3WHvQhDJFoqoHyN7S4rgf8",
+    "entry": {
+      "path": "pages/tabBar/found/found",
+      "query": "",
+      "scene": 1001
+    },
+    "maxWaitFor": 10000,
+    "ignoreSelectors": [],
+    "recordAPIs": [
+      "request"
+    ]
+  },
+  "commands": [
+    {
+      "layer": "tool",
+      "commandType": "operate",
+      "command": "startRecord",
+      "waitfor": 0,
+      "timeStamp": 1666794903802,
+      "desc": ""
+    },
+    {
+      "timeStamp": 13514,
+      "waitfor": 10000,
+      "desc": "",
+      "layer": "tool",
+      "commandType": "operate",
+      "command": "stopRecord"
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+.swiperTop.data-v-8bc389f6 {
+  padding: 16rpx;
+}
+.swiperTop .swiper.data-v-8bc389f6 {
+  border-radius: 32rpx;
+  overflow: hidden;
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+  width: 100%;
+  height: 272rpx;
+}
+.swiperTop .swiper .img.data-v-8bc389f6 {
+  width: 100%;
+  height: 272rpx;
+}
+

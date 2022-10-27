@@ -1,0 +1,1 @@
+<view class="nav" style="{{'padding-top:'+(topValue+'px')+';'}}"><text data-event-opts="{{[['tap',[['myLogout',['$event']]]]]}}" style="font-size:35rpx;" bindtap="__e">退出登录</text></view>

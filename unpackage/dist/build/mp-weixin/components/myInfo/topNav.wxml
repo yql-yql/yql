@@ -1,0 +1,1 @@
+<view class="nav"><uni-icons vue-id="1494d024-1" type="search" size="30" color="#000" data-event-opts="{{[['^click',[['gotoSearch']]]]}}" bind:click="__e" bind:__l="__l"></uni-icons><text data-event-opts="{{[['tap',[['myLogout',['$event']]]]]}}" style="font-size:35rpx;" bindtap="__e">退出登录</text></view>

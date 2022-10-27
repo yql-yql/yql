@@ -1,0 +1,1 @@
+<view><image class="bgImg" src="{{musicListInfo.coverImgUrl}}"></image><item-music-nav vue-id="044e47cc-1" bind:__l="__l"></item-music-nav><item-music-top vue-id="044e47cc-2" musicListInfo="{{musicListInfo}}" bind:__l="__l"></item-music-top><item-music-list vue-id="044e47cc-3" bind:__l="__l"></item-music-list><footer-music vue-id="044e47cc-4" bind:__l="__l"></footer-music></view>

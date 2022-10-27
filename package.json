@@ -1,0 +1,16 @@
+{
+    "uni-app": {
+        "scripts": {
+            "test-platform": {
+                "title":"测试环境",
+                "BROWSER":"Chrome",  
+                "env": {
+                    "UNI_PLATFORM": "h5" 
+                 },
+                "define": { 
+                    "CUSTOM-CONST": true 
+                }
+            }
+        }    
+    }
+}

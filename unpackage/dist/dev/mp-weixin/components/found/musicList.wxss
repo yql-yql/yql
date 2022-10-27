@@ -1,0 +1,55 @@
+.music-list.data-v-008ec2ab {
+  margin-top: 32rpx;
+}
+.music-list-title.data-v-008ec2ab {
+  display: flex;
+  align-items: center;
+  padding-left: 32rpx;
+  font-size: 38rpx;
+  font-weight: 700;
+}
+.music-list-content.data-v-008ec2ab {
+  margin-top: 32rpx;
+  width: 100%;
+  height: 240rpx;
+}
+.music-list-content .pic .swiper-item.data-v-008ec2ab {
+  width: 224rpx;
+  height: 310rpx;
+  margin-left: 20rpx;
+  display: inline-block;
+  position: relative;
+}
+.music-list-content .pic .swiper-item .img.data-v-008ec2ab {
+  width: 100%;
+  height: 224rpx;
+  border-radius: 16rpx;
+}
+.music-list-content .pic .swiper-item .playCount.data-v-008ec2ab {
+  position: absolute;
+  top: 10rpx;
+  right: 10rpx;
+  color: white;
+  font-weight: 700;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.music-list-content .pic .swiper-item .playIcon.data-v-008ec2ab {
+  position: absolute;
+  bottom: 105rpx;
+  right: 6.5rpx;
+  color: #000;
+}
+.music-list-content .pic .swiper-item .musicListName.data-v-008ec2ab {
+  position: absolute;
+  top: 224rpx;
+  left: 6.5rpx;
+  width: 100%;
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-wrap: break-word;
+  white-space: normal !important;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+

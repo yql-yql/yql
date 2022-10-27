@@ -1,0 +1,25 @@
+.topList.data-v-60f9f1db {
+  margin-top: 96rpx;
+}
+.isFooterMusic.data-v-60f9f1db {
+  padding-bottom: 100rpx;
+}
+.topList-title.data-v-60f9f1db {
+  display: flex;
+  align-items: center;
+  padding-left: 32rpx;
+  font-size: 38rpx;
+  font-weight: 700;
+}
+.topList-content .topList-swiper.data-v-60f9f1db {
+  height: 400rpx;
+}
+.topList-content .topList-swiper .swiper-item.data-v-60f9f1db {
+  font-size: 38rpx;
+  font-weight: 700;
+}
+.topList-content .topList-swiper .swiper-item.data-v-60f9f1db .uni-list-chat__header {
+  border-radius: 15rpx;
+  border: none;
+}
+

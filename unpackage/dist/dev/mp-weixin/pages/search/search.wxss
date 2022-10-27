@@ -1,0 +1,80 @@
+@charset "UTF-8";
+.header.data-v-4cedc0c6 {
+  position: fixed;
+  top: 0;
+  left: 10rpx;
+  width: 100%;
+  height: 80rpx;
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  z-index: 100;
+}
+.searchPage.data-v-4cedc0c6 {
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+}
+.searchPage .searchTop.data-v-4cedc0c6 {
+  position: -webkit-sticky;
+  position: sticky;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 0 6.5rpx;
+  background-color: #fff;
+  z-index: 10;
+}
+.searchPage .searchTop .searchBox.data-v-4cedc0c6 {
+  width: 70%;
+  text-align: center;
+}
+.searchPage .searchTop button.data-v-4cedc0c6 {
+  background-color: transparent;
+  font-size: 32rpx;
+}
+.searchPage .searchTop button.data-v-4cedc0c6::after {
+  border: 0;
+}
+.searchPage .searchContent .title.data-v-4cedc0c6 {
+  font-size: 38rpx;
+  font-weight: 700;
+}
+.searchPage .searchContent .history.data-v-4cedc0c6 {
+  padding: 32rpx;
+}
+.searchPage .searchContent .history .history-header.data-v-4cedc0c6 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.searchPage .searchContent .history .history-content.data-v-4cedc0c6 {
+  display: flex;
+  align-items: center;
+  margin-top: 32rpx;
+  width: 700rpx;
+  flex-flow: wrap;
+}
+.searchPage .searchContent .history .history-content .history-item.data-v-4cedc0c6 {
+  height: 26rpx;
+  line-height: 26rpx;
+  border-radius: 13%;
+  background-color: #f8f8f8;
+  padding: 20rpx;
+  margin: 0 26rpx 20rpx 0;
+  font-size: 35rpx;
+  font-family: '微软雅黑';
+  color: #686868;
+}
+.searchPage .searchContent .searchList.data-v-4cedc0c6 {
+  padding: 32rpx;
+}
+.searchPage .searchContent .searchList .searchList-header.data-v-4cedc0c6 {
+  display: flex;
+  align-items: center;
+  margin-bottom: 32rpx;
+}
+.searchPage .searchContent .isFooterMusic.data-v-4cedc0c6 {
+  padding-bottom: 100rpx;
+}
+

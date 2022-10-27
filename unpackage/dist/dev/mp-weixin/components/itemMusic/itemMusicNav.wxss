@@ -1,0 +1,9 @@
+.top-title {
+  position: fixed;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding-bottom: 32rpx;
+  z-index: 10;
+}
+

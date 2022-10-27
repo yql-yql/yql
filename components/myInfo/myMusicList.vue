@@ -1,0 +1,59 @@
+<template>
+	<view class="myMusicList" :class="{ isFooterMusic: playList.length }">
+		<view class="top">我的歌单</view>
+		<view class="content">
+			<uni-list :border="false">
+				<uni-list-chat v-for="i in myMusicList" :key="i.coverImgId" :title="i.name" :avatar="i.coverImgUrl" :note="i.trackCount + '首'"></uni-list-chat>
+			</uni-list>
+		</view>
+	</view>
+</template>
+
+<script>
+import { mapState, mapMutations } from 'vuex';
+import { getMyMusicList } from '@/api/myInfo.js';
+export default {
+	data() {
+		return {};
+	},
+	computed: {
+		...mapState(['myInfo', 'myMusicList', 'playList'])
+	},
+	methods: {
+		...mapMutations(['updateMyMusicList']),
+		_getMyMusicList: async function() {
+			let id = this.myInfo.id || JSON.parse(uni.getStorageSync('myInfo')).id;
+			let res = await getMyMusicList(id);
+			this.updateMyMusicList(res.data.playlist);
+			console.log('我的歌单', this.myMusicList);
+		}
+	},
+	mounted() {
+		this._getMyMusicList();
+	}
+};
+</script>
+
+<style lang="scss">
+.myMusicList {
+	width: 100%;
+	border: 1px solid #e8e8e8;
+	background-color: #fff;
+	border-radius: 20rpx;
+	box-shadow: 0 0 4px 5px rgba(0, 0, 0, 0.04);
+	margin-top: 20rpx;
+	margin-bottom: 20rpx;
+	.top {
+		font-size: 40rpx;
+		font-weight: 700;
+		padding: 30rpx 0 10rpx 30rpx;
+	}
+	/deep/ .uni-list-chat__header {
+		border-radius: 15rpx;
+		border: none;
+	}
+}
+.isFooterMusic {
+	padding-bottom: 100rpx;
+}
+</style>

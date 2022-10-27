@@ -1,0 +1,12 @@
+{
+  "navigationBarTitleText": "发现",
+  "enablePullDownRefresh": true,
+  "usingComponents": {
+    "swiper-top": "/components/found/swiperTop",
+    "top-nav": "/components/found/topNav",
+    "music-list": "/components/found/musicList",
+    "icon-list": "/components/found/iconList",
+    "top-list": "/components/found/topList",
+    "footer-music": "/components/itemMusic/footerMusic"
+  }
+}
