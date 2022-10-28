@@ -15,7 +15,7 @@
 				<img :src="playList[playListIndex].al.picUrl" alt="" class="ar" :class="{ ar_active: isPlay, ar_paused: !isPlay }" />
 			</view>
 		</view>
-		<scroll-view
+		<!-- <scroll-view
 			:scroll-top="scrollTop"
 			ref="nodesRef"
 			scroll-y="true"
@@ -35,7 +35,26 @@
 			>
 				{{ item.lrc }}
 			</view>
-		</scroll-view>
+		</scroll-view> -->
+		<view
+			class=" lyric"
+			@click="isLyricShow = !isLyricShow"
+			v-show="isLyricShow"
+			:style="{ 'margin-top': topValue + 60 + 'px'}"
+		>
+			<view
+				class="row"
+				v-for="(item, i) in lyric"
+				:id="i"
+				:key="i"
+				:style="{transform: `translateY(${scrollTop}px)`}"
+				:class="{
+					active: currentTime * 1000 >= item.time && currentTime * 1000 < item.next
+				}"
+			>
+				{{ item.lrc }}
+			</view>
+		</view>
 		<view class="detail-footer">
 			<view class="footer-top">
 				<uni-icons custom-prefix="iconfont" type="icon-aixin" size="30" color="#fff"></uni-icons>
@@ -81,7 +100,7 @@ export default {
 			scrollTop: 0, //滚动距离
 			timer: null,
 			name: '',
-			active: null,
+			isMove:false
 		};
 	},
 	computed: {
@@ -180,16 +199,17 @@ export default {
 	watch: {
 		currentTime: function(newValue) {
 			let query = uni.createSelectorQuery();
-			this.active = query.select('.active');
+			let active = query.select('.active');
 			if (this.isLyricShow) {
-				this.active
+				active
 					.boundingClientRect(data => {
-						if (data) {
-							this.scrollTop += data.top - 220;
+						if (data && data.top > 250) {
+							console.log(this);
+							this.scrollTop -=(data.top-250);
+							// console.log(data,this.scrollTop);
 						}
 					})
 					.exec();
-				this.active = null;
 			}
 			//如果歌曲结束，就自动播放下一曲
 			if (newValue === this.duration) {
@@ -212,6 +232,7 @@ export default {
 	position: absolute;
 	top: 0;
 	filter: blur(70px) brightness(70%);
+	z-index: 0;
 }
 .detail-top {
 	position: absolute;
@@ -285,7 +306,11 @@ export default {
 	}
 }
 .lyric {
-	view {
+	height: 800rpx;
+	position:absolute;
+	z-index: 10;
+	overflow-y:scroll;
+	.row{
 		width: 700rpx;
 		color: rgb(161, 161, 161);
 		margin-bottom: 20rpx;
@@ -298,6 +323,9 @@ export default {
 		color: #fff;
 		font-size: 40rpx;
 	}
+}
+.move{
+	// transform: translateY(-30px);
 }
 .detail-footer {
 	position: absolute;

@@ -25,9 +25,7 @@ export default {
 		...mapMutations(['updateMyInfo'])
 	},
 	mounted() {
-		if(uni.getStorageSync('myInfo')){
-			this.updateMyInfo(JSON.parse(uni.getStorageSync('myInfo')));
-		}
+		this.updateMyInfo(JSON.parse(uni.getStorageSync('myInfo')));
 	}
 };
 </script>

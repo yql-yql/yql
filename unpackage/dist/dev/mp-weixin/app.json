@@ -1,50 +1,51 @@
 {
-  "pages": [
-    "pages/tabBar/found/found",
-    "pages/tabBar/myInfo/myInfo",
-    "pages/search/search",
-    "pages/login/login",
-    "pages/itemMusic/itemMusic",
-    "pages/musicDetail/musicDetail"
-  ],
-  "subPackages": [],
-  "window": {
-    "navigationStyle": "custom",
-    "navigationBarTextStyle": "black",
-    "navigationBarBackgroundColor": "#F8F8F8",
-    "backgroundColor": "#F8F8F8",
-    "rpxCalcMaxDeviceWidth": 1024,
-    "rpxCalcBaseDeviceWidth": 375,
-    "rpxCalcIncludeWidth": 750
-  },
-  "tabBar": {
-    "height": "100rpx",
-    "color": "#fff",
-    "fontSize": "32rpx",
-    "selectedColor": "#ff0000",
-    "borderStyle": "black",
-    "backgroundColor": "#e9cac6",
-    "list": [
-      {
-        "pagePath": "pages/tabBar/found/found",
-        "iconPath": "static/assets/faxian.png",
-        "selectedIconPath": "static/assets/faxian-active.png",
-        "text": "发现"
-      },
-      {
-        "pagePath": "pages/tabBar/myInfo/myInfo",
-        "iconPath": "static/assets/wowowo.png",
-        "selectedIconPath": "static/assets/wowowo-active.png",
-        "text": "我的"
-      }
-    ]
-  },
-  "permission": {},
-  "unipush": {
-    "enable": false
-  },
-  "requireBackgroudModes": [
-    "audio"
-  ],
-  "usingComponents": {}
+    "pages": [
+        "pages/tabBar/found/found",
+        "pages/tabBar/myInfo/myInfo",
+        "pages/search/search",
+        "pages/login/login",
+        "pages/itemMusic/itemMusic",
+        "pages/musicDetail/musicDetail"
+    ],
+    "subPackages": [],
+    "window": {
+        "navigationStyle": "custom",
+        "navigationBarTextStyle": "black",
+        "navigationBarBackgroundColor": "#F8F8F8",
+        "backgroundColor": "#F8F8F8",
+        "rpxCalcMaxDeviceWidth": 1024,
+        "rpxCalcBaseDeviceWidth": 375,
+        "rpxCalcIncludeWidth": 750
+    },
+    "tabBar": {
+        "height": "100rpx",
+        "color": "#fff",
+        "fontSize": "32rpx",
+        "selectedColor": "#ff0000",
+        "borderStyle": "black",
+        "backgroundColor": "#e9cac6",
+        "list": [
+            {
+                "pagePath": "pages/tabBar/found/found",
+                "iconPath": "static/assets/faxian.png",
+                "selectedIconPath": "static/assets/faxian-active.png",
+                "text": "发现"
+            },
+            {
+                "pagePath": "pages/tabBar/myInfo/myInfo",
+                "iconPath": "static/assets/wowowo.png",
+                "selectedIconPath": "static/assets/wowowo-active.png",
+                "text": "我的"
+            }
+        ]
+    },
+    "permission": {},
+    "unipush": {
+        "enable": false
+    },
+    "requireBackgroudModes": [
+        "audio"
+    ],
+    "usingComponents": {},
+    "sitemapLocation": "sitemap.json"
 }

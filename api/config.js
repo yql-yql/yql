@@ -16,7 +16,7 @@ let baseUrl = ""
 //    	}
 // }
 /* #ifdef MP-WEIXIN || APP-PLUS */
-baseUrl = 'http://192.168.1.7:3000'
+baseUrl = 'http://192.168.56.1:3000'
 /* #endif */
 /* #ifdef H5*/
 baseUrl = '/api'

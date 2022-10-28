@@ -9,6 +9,7 @@
   top: 0;
   -webkit-filter: blur(70px) brightness(70%);
           filter: blur(70px) brightness(70%);
+  z-index: 0;
 }
 .detail-top {
   position: absolute;
@@ -99,7 +100,13 @@
             transform: rotateZ(360deg);
 }
 }
-.lyric view {
+.lyric {
+  height: 800rpx;
+  position: absolute;
+  z-index: 10;
+  overflow-y: scroll;
+}
+.lyric .row {
   width: 700rpx;
   color: #a1a1a1;
   margin-bottom: 20rpx;
