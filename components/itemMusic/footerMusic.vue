@@ -26,15 +26,11 @@ export default {
 		//渲染和更新的时候都要获取歌词
 		if (this.playList.length) {
 			this.$store.dispatch('getLyric', this.playList[this.playListIndex].id);
-			this.updateTime();
-			this.addDuration();
 		}
 	},
 	updated() {
 		if (this.playList.length) {
 			this.$store.dispatch('getLyric', this.playList[this.playListIndex].id);
-			this.addDuration();
-			this.updateTime();
 		}
 	},
 	watch: {},
@@ -60,12 +56,6 @@ export default {
 				this.updateDuration(audio.music.duration);
 			}, 1000);
 		},
-		//获取歌曲当前演奏时间
-		updateTime: function() {
-			this.interval = setInterval(() => {
-				this.updateCurrentTime(audio.music.currentTime);
-			}, 1);
-		}
 	}
 };
 </script>

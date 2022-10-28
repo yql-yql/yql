@@ -27,6 +27,13 @@
   align-items: center;
   justify-content: space-around;
 }
+.detail-top .title .name, .detail-top .title .singer {
+  width: 280rpx;
+  text-align: center;
+  word-wrap: break-word;
+  overflow: scroll;
+  white-space: nowrap;
+}
 .cd {
   position: relative;
   top: 320rpx;
@@ -102,15 +109,13 @@
 }
 .lyric {
   height: 800rpx;
-  position: absolute;
-  z-index: 10;
-  overflow-y: scroll;
 }
 .lyric .row {
   width: 700rpx;
   color: #a1a1a1;
-  margin-bottom: 20rpx;
-  padding: 20rpx 30rpx;
+  margin: 40rpx 0;
+  padding: 0 30rpx;
+  height: 50rpx;
   font-size: 32rpx;
   z-index: 1;
   text-align: center;
@@ -118,6 +123,9 @@
 .lyric .active {
   color: #fff;
   font-size: 40rpx;
+  transition: -webkit-transform cubic-bezier(0.075, 0.82, 0.165, 1) 0.5s;
+  transition: transform cubic-bezier(0.075, 0.82, 0.165, 1) 0.5s;
+  transition: transform cubic-bezier(0.075, 0.82, 0.165, 1) 0.5s, -webkit-transform cubic-bezier(0.075, 0.82, 0.165, 1) 0.5s;
 }
 .detail-footer {
   position: absolute;

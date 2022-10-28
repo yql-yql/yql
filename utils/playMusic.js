@@ -24,8 +24,6 @@ audio.playAudios = function(src) {
 			music.play();
 		}
 	}
-	//更新duration
-	// store.commit('updateDuration',music.duration);
 }
 audio.stopAudios = function() {
 	music.stop()
@@ -48,7 +46,9 @@ music.onPause(() => { //暂停监听
 music.onSeeked(()=>{//监听进度跳转事件
 	console.log('跳转完成');
 })
-
+music.onTimeUpdate(()=>{//监听进度更新事件
+	store.commit('updateCurrentTime',music.currentTime);
+})
 music.onEnded(() => { // 自然播放结束监听也需要更改歌曲播放状态
 	console.log('音频自然播放结束事件');
 	store.commit('updateIsPlay', false);
@@ -63,7 +63,7 @@ music.onCanplay(() => {
 		}, 1000)
 	}
 });
-music.onError((e) => {
+music.onError(() => {
 	console.log('错误');
 	uni.showToast({
 		title:'暂时没有这首歌曲的资源哦，换首别的吧o(╥﹏╥)o',

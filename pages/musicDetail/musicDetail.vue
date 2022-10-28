@@ -4,8 +4,10 @@
 		<view class="detail-top" :style="{ top: topValue + 'px' }">
 			<uni-icons @click="closeMusicDetail" type="bottom" size="30" color="#fff"></uni-icons>
 			<view class="title">
-				<view class="name" style="font-size: 30rpx;">{{ playList[playListIndex].name }}</view>
-				<view class="singer">{{ playList[playListIndex].ar[0].name }}</view>
+<!-- 				<marquee v-if="name.length >= 8" broadcastType="text" direction="left"></marquee>
+ -->				<view  class="name" style="font-size: 30rpx;">{{ playList[playListIndex].name }}</view>
+<!-- 				<marquee v-if="singer.length >= 8" broadcastType="text" direction="left"></marquee>
+ -->				<view  class="singer">{{ playList[playListIndex].ar[0].name }}</view>
 			</view>
 		</view>
 		<view class="detail-body">
@@ -15,46 +17,27 @@
 				<img :src="playList[playListIndex].al.picUrl" alt="" class="ar" :class="{ ar_active: isPlay, ar_paused: !isPlay }" />
 			</view>
 		</view>
-		<!-- <scroll-view
+		<scroll-view
 			:scroll-top="scrollTop"
-			ref="nodesRef"
 			scroll-y="true"
 			class=" lyric"
+			scroll-with-animation
 			@click="isLyricShow = !isLyricShow"
 			v-show="isLyricShow"
-			:style="{ 'margin-top': topValue + 50 + 'px'}"
-		>
-			<view
-				class="scroll-view-item"
-				v-for="(item, i) in lyric"
-				:id="i"
-				:key="i"
-				:class="{
-					active: currentTime * 1000 >= item.time && currentTime * 1000 < item.next
-				}"
-			>
-				{{ item.lrc }}
-			</view>
-		</scroll-view> -->
-		<view
-			class=" lyric"
-			@click="isLyricShow = !isLyricShow"
-			v-show="isLyricShow"
-			:style="{ 'margin-top': topValue + 60 + 'px'}"
+			:style="{ 'margin-top': topValue + 50 + 'px' }"
 		>
 			<view
 				class="row"
 				v-for="(item, i) in lyric"
 				:id="i"
 				:key="i"
-				:style="{transform: `translateY(${scrollTop}px)`}"
 				:class="{
 					active: currentTime * 1000 >= item.time && currentTime * 1000 < item.next
 				}"
 			>
 				{{ item.lrc }}
 			</view>
-		</view>
+		</scroll-view>
 		<view class="detail-footer">
 			<view class="footer-top">
 				<uni-icons custom-prefix="iconfont" type="icon-aixin" size="30" color="#fff"></uni-icons>
@@ -91,6 +74,7 @@
 </template>
 
 <script>
+import marquee from '@/components/common/gbro-marquee/marquee.vue';
 import { mapMutations, mapState } from 'vuex';
 import audio from '@/utils/playMusic.js';
 export default {
@@ -99,12 +83,25 @@ export default {
 			isLyricShow: false, //歌词开关
 			scrollTop: 0, //滚动距离
 			timer: null,
-			name: '',
-			isMove:false
+			preTop: 0
 		};
 	},
+	components: { marquee },
+	mounted() {},
 	computed: {
-		...mapState(['playList', 'playListIndex', 'isPlay', 'currentTime', 'duration', 'lyricList', 'topValue']),
+		...mapState(['playList', 'playListIndex', 'bufferd', 'isPlay', 'currentTime', 'duration', 'lyricList', 'topValue']),
+		//对歌名进行处理
+		name: function() {
+			let arr = this.playList[this.playListIndex].name.split('');
+			console.log('名字', arr);
+			return arr;
+		},
+		//对歌手名字进行处理
+		singer: function() {
+			let arr = this.playList[this.playListIndex].ar[0].name.split('');
+			console.log('名字', arr);
+			return arr;
+		},
 		//对歌词进行处理
 		lyric: function() {
 			let arr;
@@ -192,8 +189,13 @@ export default {
 		},
 		//点击进度条
 		sliderChange: function(res) {
-			audio.goto(res.detail.value);
-			this.updateCurrentTime(res.detail.value);
+			if (res.detail.value > audio.music.buffered) {
+				console.log('不能跳');
+			} else {
+				console.log('可以跳');
+				audio.goto(res.detail.value);
+				this.updateCurrentTime(res.detail.value);
+			}
 		}
 	},
 	watch: {
@@ -203,10 +205,10 @@ export default {
 			if (this.isLyricShow) {
 				active
 					.boundingClientRect(data => {
-						if (data && data.top > 250) {
-							console.log(this);
-							this.scrollTop -=(data.top-250);
-							// console.log(data,this.scrollTop);
+						if (data) {
+							if (data.top <= 0 || data.top >= 100) {
+								this.scrollTop += data.top - 250;
+							}
 						}
 					})
 					.exec();
@@ -248,6 +250,13 @@ export default {
 		flex-direction: column;
 		align-items: center;
 		justify-content: space-around;
+		.name,.singer{
+			width: 280rpx;
+			text-align: center;
+			word-wrap: break-word;
+			overflow: scroll;
+			white-space: nowrap;
+		}
 	}
 }
 .cd {
@@ -307,14 +316,12 @@ export default {
 }
 .lyric {
 	height: 800rpx;
-	position:absolute;
-	z-index: 10;
-	overflow-y:scroll;
-	.row{
+	.row {
 		width: 700rpx;
 		color: rgb(161, 161, 161);
-		margin-bottom: 20rpx;
-		padding: 20rpx 30rpx;
+		margin: 40rpx 0;
+		padding: 0 30rpx;
+		height: 50rpx;
 		font-size: 32rpx;
 		z-index: 1;
 		text-align: center;
@@ -322,9 +329,10 @@ export default {
 	.active {
 		color: #fff;
 		font-size: 40rpx;
+		transition: transform cubic-bezier(0.075, 0.82, 0.165, 1) 0.5s;
 	}
 }
-.move{
+.move {
 	// transform: translateY(-30px);
 }
 .detail-footer {
